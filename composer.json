@@ -1,0 +1,17 @@
+{
+    "name": "ipan/simonsi",
+    "description": "simonsi",
+    "type": "project",
+    "authors": [
+        {
+            "name": "ipan sopyan",
+            "email": "ipansopyan15@rocketmail.com"
+        }
+    ],
+    "require": {},
+    "autoload" : {
+        "psr-4" : {
+            "App\\":"App/"
+        }
+    }
+}
