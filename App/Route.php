@@ -2,11 +2,12 @@
 namespace App;
 require_once "Controller/AuthController.php";
 require_once "Controller/HomeController.php";
+require_once "Controller/AdminController.php";
 
 use App\Controller\Controller;
 use App\Controller\AuthController;
 use App\Controller\SimonsiController;
-use App\Controller\JoinController;
+use App\Controller\AdminController;
 use App\Controller\HomeController;
 
 
@@ -21,7 +22,7 @@ class Route
   {
     $this->authController     = new AuthController();
     $this->homeController     = new HomeController();
-    // $this->simonsiController  = new simonsiController();
+    $this->adminController  = new AdminController();
     // $this->joinController     = new JoinController();
 
 
@@ -63,6 +64,16 @@ class Route
             $this->simonsiController->edit_simonsi();
           }elseif ($simonsi == 'update') {
             $this->simonsiController->update();
+          }
+
+          //admin controller
+
+          if ($simonsi == 'admin') {
+            $this->adminController->index();
+          }elseif ($simonsi == 'addfakultas') {
+            $this->adminController->addfakultas();
+          }elseif ($simonsi == 'add_fakultas_submit') {
+            $this->adminController->add_fakultas_submit();
           }
 
           //join controller

@@ -53,6 +53,13 @@ class User
       $secret = mysqli_real_escape_string($con, $data);
       return $secret;
   }
+  public function data_dosen()
+  {
+        $con = $this->openDb();
+        $query  = mysqli_query($con, "SELECT * FROM user WHERE role = 2");
+        // $row = mysqli_fetch_array($query);
+        return $query;
+  }
 
 }
 

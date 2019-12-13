@@ -58,20 +58,25 @@ class AuthController extends Controller
       $result = $this->user->cek_login($nim,$password);
 
    
-      if ($result['1'] == $nim && $result['5'] == $password) {
+      if ($result['1'] == $nim && $result['5'] == $password && $result['2'] == 3) {
         $_SESSION['email'] = $result['email'];
         $_SESSION['name']  = $result['name'];
         $_SESSION['id']    = $result['id'];
-        header("Location: index.php?simonsi=home");
+        $prodi = $this->prodi->prodi_user($result['prodi_id']);
+        $_SESSION['prodi']    = $prodi['name'];
+        $_SESSION['n_induk']    = $result['n_induk'];
+        header("Location: index.php?simonsi=admin");
         // echo "halaman home";
+      }else if($result['1'] == $nim && $result['5'] == $password) {
+        $_SESSION['email'] = $result['email'];
+        $_SESSION['name']  = $result['name'];
+        $_SESSION['id']    = $result['id'];
+        $prodi = $this->prodi->prodi_user($result['prodi_id']);
+        $_SESSION['prodi']    = $prodi['name'];
+        $_SESSION['n_induk']    = $result['n_induk'];
+        header("Location: index.php?simonsi=home");
       }else {
-          $_SESSION['pesan']  = 'user tidak ada';
-          echo "user tidak ada";
-          // header('Location: http://localhost/httaccess');
-
-        die;
-        // header("Location: index.php");
-
+        echo "user tidak ada";
       }
 
       }
