@@ -60,6 +60,20 @@ class User
         // $row = mysqli_fetch_array($query);
         return $query;
   }
+  public function dosen($id)
+  {
+        $con = $this->openDb();
+        $query  = mysqli_query($con, "SELECT * FROM user WHERE id = $id");
+        $row = mysqli_fetch_array($query);
+        return $row;
+  }
+  public function data_mahasiswa()
+  {
+        $con = $this->openDb();
+        $query  = mysqli_query($con, "SELECT * FROM user WHERE role = 1");
+        // $row = mysqli_fetch_array($query);
+        return $query;
+  }
 
 }
 

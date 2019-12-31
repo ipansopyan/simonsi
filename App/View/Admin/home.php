@@ -390,6 +390,63 @@ $(document).ready(function(){
 	                        <!-- ============================================================== -->
 	                        <div class="col-lg-12">
 	                            <div class="section-block">
+	                                <h3 class="section-title">Data Mahasiswa</h3>
+	                            </div>
+	                            <div class="card">
+	                                <div class="campaign-table table-responsive">
+	                                    <table class="table">
+	                                        <thead>
+	                                            <tr class="border-0">
+	                                                <th class="border-0">NID</th>
+													<th class="border-0">Nama</th>
+													<th class="border-0">Email</th>
+													<th class="border-0">Fakultas</th>
+	                                                <th class="border-0">Opsi</th>
+	                                                <!-- <th class="border-0">Social Platform</th>
+	                                                <th class="border-0">Min / Max Views</th>
+	                                                <th class="border-0">Status</th>
+	                                                <th class="border-0">Start Date</th>
+	                                                <th class="border-0">Action</th> -->
+	                                            </tr>
+	                                        </thead>
+	                                        <tbody>
+	                                                </td>
+	                                            </tr>
+												<?php foreach ($mahasiswas as $mahasiwa) {
+	                                            ?>
+												<tr>
+													<td> <?php echo $mahasiwa['n_induk']; ?> </td>
+													<td> <?php echo $mahasiwa['name']; ?> </td>
+													<td> <?php echo $mahasiwa['email']; ?> </td>
+													<td> <?php foreach ($prodi as $prod) {
+														if ($prod['id'] == $mahasiwa['prodi_id']) {
+															echo $prod['name'];
+														}
+													} ?> </td>
+													<?php
+													?>
+	                                                <td><a class="btn btn-success btn-xs" href="http://">edit</a> 
+													<a class="btn btn-danger btn-xs" href="http://">hapus</a>
+													 </td>
+	                                                </td>
+												</tr> <?php
+											} ?>
+	                                        </tbody>
+	                                    </table>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <!-- ============================================================== -->
+	                        <!-- end campaign activities   -->
+	                        <!-- ============================================================== -->
+	                    </div>
+						
+						<div class="row" >
+	                        <!-- ============================================================== -->
+	                        <!-- campaign activities   -->
+	                        <!-- ============================================================== -->
+	                        <div class="col-lg-12">
+	                            <div class="section-block">
 	                                <h3 class="section-title">Data Mata Kuliah</h3>
 	                            </div>
 	                            <div class="card">
@@ -442,7 +499,121 @@ $(document).ready(function(){
 	                        <!-- end campaign activities   -->
 	                        <!-- ============================================================== -->
 	                    </div>
-						
+						<div class="row" >
+	                        <!-- ============================================================== -->
+	                        <!-- campaign activities   -->
+	                        <!-- ============================================================== -->
+	                        <div class="col-lg-12">
+	                            <div class="section-block">
+	                                <h3 class="section-title">Data Tahun Akademik</h3>
+	                            </div>
+	                            <div class="card">
+	                                <div class="campaign-table table-responsive">
+	                                    <table class="table">
+	                                        <thead>
+	                                            <tr class="border-0">
+													<th class="border-0">Nama</th>
+													<th class="border-0">Status</th>
+	                                                <th class="border-0">Opsi</th>
+	                                                <!-- <th class="border-0">Social Platform</th>
+	                                                <th class="border-0">Min / Max Views</th>
+	                                                <th class="border-0">Status</th>
+	                                                <th class="border-0">Start Date</th>
+	                                                <th class="border-0">Action</th> -->
+	                                            </tr>
+	                                        </thead>
+	                                        <tbody>
+	                                                </td>
+	                                            </tr>
+												<?php foreach ($tahun_akas as $tahun_aka) {
+	                                            ?>
+												<tr>
+													<td> <?php echo $tahun_aka['name']; ?> </td>
+													<td> <?php if ($tahun_aka['status'] == 1) {
+														echo "aktif";
+													}else {
+														echo "tidak aktif";
+													}  ?> </td>
+	                                                <td><a class="btn btn-success btn-xs" href="http://">edit</a> 
+													<a class="btn btn-danger btn-xs" href="http://">hapus</a>
+													 </td>
+	                                                </td>
+												</tr> <?php
+											} ?>
+	                                        </tbody>
+	                                    </table>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <!-- ============================================================== -->
+	                        <!-- end campaign activities   -->
+	                        <!-- ============================================================== -->
+	                    </div>
+						<div class="row" >
+	                        <!-- ============================================================== -->
+	                        <!-- campaign activities   -->
+	                        <!-- ============================================================== -->
+	                        <div class="col-lg-12">
+	                            <div class="section-block">
+	                                <h3 class="section-title">Data Penilaian Pembelajaran</h3>
+	                            </div>
+	                            <div class="card">
+	                                <div class="campaign-table table-responsive">
+	                                    <table class="table">
+	                                        <thead>
+	                                            <tr class="border-0">
+													<th class="border-0">Nama Dosen</th>
+													<th class="border-0">Nama Mahasiswa</th>
+	                                                <th class="border-0">Fakuktas</th>
+													<th class="border-0">Tgl Nilai</th>
+													<th class="border-0">Soal 1</th>
+													<th class="border-0">Soal 2</th>
+													<th class="border-0">Soal 3</th>
+													<th class="border-0">Saran</th>
+	                                                <!-- <th class="border-0">Social Platform</th>
+	                                                <th class="border-0">Min / Max Views</th>
+	                                                <th class="border-0">Status</th>
+	                                                <th class="border-0">Start Date</th>
+	                                                <th class="border-0">Action</th> -->
+	                                            </tr>
+	                                        </thead>
+	                                        <tbody>
+	                                                </td>
+	                                            </tr>
+												<?php foreach ($penilaians as $penilaian) {
+	                                            ?>
+												<tr>
+													<td><?php foreach ($dosens as $dosen) {
+														if ($dosen['id'] == $penilaian['dosen_id']) {
+															echo $dosen['name'];
+														}
+													} ?></td>
+													 <td> <?php foreach ($mahasiswas as $mahasiswa) {
+														if ($mahasiswa['id'] == $penilaian['user_id']) {
+															echo $mahasiswa['name'];
+														}
+													} ?> </td> 
+													 <td> <?php foreach ($prodi as $prod) {
+														if ($prod['id'] == $penilaian['user_id']) {
+															echo $prod['name'];
+														}
+													} ?> </td>
+													<td><?php echo $penilaian['tgl_nilai'] ?></td>
+	                                                <td><a class="btn btn-success btn-xs" href="http://">edit</a> 
+													<a class="btn btn-danger btn-xs" href="http://">hapus</a>
+													 </td>
+	                                                
+												</tr> <?php
+											} ?>
+	                                        </tbody>
+	                                    </table>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <!-- ============================================================== -->
+	                        <!-- end campaign activities   -->
+	                        <!-- ============================================================== -->
+	                    </div>
 						
 	                    <!-- ============================================================== -->
 	                    <!-- recommended campaigns   -->

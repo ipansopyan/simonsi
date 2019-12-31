@@ -59,24 +59,35 @@ class AuthController extends Controller
 
    
       if ($result['1'] == $nim && $result['5'] == $password && $result['2'] == 3) {
-        $_SESSION['email'] = $result['email'];
-        $_SESSION['name']  = $result['name'];
-        $_SESSION['id']    = $result['id'];
+        $_SESSION['email']  = $result['email'];
+        $_SESSION['name']   = $result['name'];
+        $_SESSION['id']     = $result['id'];
+        $_SESSION['role']   = $result['role'];
         $prodi = $this->prodi->prodi_user($result['prodi_id']);
         $_SESSION['prodi']    = $prodi['name'];
+        $_SESSION['prodi_id']    = $prodi['id'];
         $_SESSION['n_induk']    = $result['n_induk'];
         header("Location: index.php?simonsi=admin");
         // echo "halaman home";
-      }else if($result['1'] == $nim && $result['5'] == $password) {
+      }else if($result['1'] == $nim && $result['5'] == $password && $result['2'] == 1) {
         $_SESSION['email'] = $result['email'];
         $_SESSION['name']  = $result['name'];
         $_SESSION['id']    = $result['id'];
+        $_SESSION['role']   = $result['role'];
         $prodi = $this->prodi->prodi_user($result['prodi_id']);
         $_SESSION['prodi']    = $prodi['name'];
+        $_SESSION['prodi_id']    = $prodi['id'];
         $_SESSION['n_induk']    = $result['n_induk'];
         header("Location: index.php?simonsi=home");
       }else {
-        echo "user tidak ada";
+        $_SESSION['pesan']    = 1;
+        $_SESSION['isi'] = '<div class="alert alert-danger" role="alert">
+                  Nim atau password salah.! harap masukan dengan benar
+                  </div>';
+        if($_SESSION['pesan'] == 2){
+          unset($_SESSION['pesan']);
+        }
+        header("Location: index.php?simonsi=login");
       }
 
       }
@@ -105,9 +116,15 @@ class AuthController extends Controller
 
 
   if ($result > 0) {
-    // $_SESSION['pesan']  = 'user sudah terdaftar';
-    echo "user ada";
-    // header("Location: index.php?simonsi=register");
+
+    header("Location: index.php?simonsi=register");
+    $_SESSION['pesan']    = 1;
+    $_SESSION['isi'] = '<div class="alert alert-danger" role="alert">
+              user sudah ada silahkan login
+              </div>';
+    if($_SESSION['pesan'] == 2){
+      unset($_SESSION['pesan']);
+    }
   }else{
     try {
       $this->user->create_user($nim,$role,$name,$email,$passwd,$prodi,$kelas);

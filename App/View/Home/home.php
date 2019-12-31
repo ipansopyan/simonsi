@@ -151,7 +151,7 @@
 	                            Menu
 	                        </li>
 	                        <li class="nav-item ">
-	                            <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+	                            <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Kembali <span class="badge badge-success">6</span></a>
 	                            <div id="submenu-1" class="collapse submenu" style="">
 	                                <ul class="nav flex-column">
 	                                    <li class="nav-item">
@@ -576,6 +576,12 @@
 	                        <!-- end followers by locations  -->
 	                        <!-- ============================================================== -->
 	                    </div>
+						<?php if ($_SESSION['pesan'] == 1) {
+							echo $_SESSION['isi'];
+						} 
+						$_SESSION['pesan'] = 0;
+						?>
+								
 	                    <div class="row">
 	                        <!-- ============================================================== -->
 	                        <!-- campaign activities   -->
@@ -583,170 +589,57 @@
 	                        <div class="col-lg-12">
 	                            <div class="section-block">
 	                                <h3 class="section-title">Data Simonsi Akademik</h3>
+									<a href="http://localhost/simonsi/index.php?simonsi=add_data_akademik"  class="btn btn-xs btn-success"><i class="fas fa-plus"></i></a>
 	                            </div>
 	                            <div class="card">
 	                                <div class="campaign-table table-responsive">
 	                                    <table class="table">
 	                                        <thead>
 	                                            <tr class="border-0">
-	                                                <th class="border-0">Company</th>
-	                                                <th class="border-0">Campaign Name</th>
-	                                                <th class="border-0">Social Platform</th>
-	                                                <th class="border-0">Min / Max Views</th>
-	                                                <th class="border-0">Status</th>
-	                                                <th class="border-0">Start Date</th>
-	                                                <th class="border-0">Action</th>
+	                                                <th class="border-0">Dosen</th>
+	                                                <th class="border-0">Mata Kuliah</th>
+	                                                <th class="border-0">Fakultas</th>
+	                                                <th class="border-0">Tgl Input</th>
+	                                                <th class="border-0">T.a</th>
+													<th class="border-0">Opsi</th>
 	                                            </tr>
 	                                        </thead>
 	                                        <tbody>
-	                                            <tr>
-	                                                <td>
-	                                                    <div class="m-r-10"><img src="assets/images/dribbble.png" alt="user" width="35"></div>
-	                                                </td>
-	                                                <td>Fashion E Commerce </td>
-	                                                <td>
-	                                                    <div class="avatar-group">
-	                                                        <span><a href="#"><i class="fab fa-fw fa-facebook-square facebook-color"></i></a></span>
-	                                                        <span><a href="#"><i class="fab fa-fw fa-twitter-square twitter-color"></i></a></span>
-	                                                        <span><a href="#"><i class="fab fa-fw fa-instagram instagram-color"></i></a></span>
-	                                                        <span><a href="#"><i class="fab fa-fw fa-pinterest-square pinterest-color"></i></a></span>
-	                                                    </div>
-	                                                </td>
-	                                                <td>1,00,000 / 1,50,000</td>
-	                                                <td>70%</td>
-	                                                <td>7 Aug,2018</td>
-	                                                <td>
-	                                                    <div class="dropdown float-right">
-	                                                        <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="true">
-	                                                                <i class="mdi mdi-dots-vertical"></i>
-	                                                                     </a>
-	                                                        <div class="dropdown-menu dropdown-menu-right">
-	                                                            <!-- item-->
-	                                                            <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
-	                                                            <!-- item-->
-	                                                            <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-	                                                            <!-- item-->
-	                                                            <a href="javascript:void(0);" class="dropdown-item">Profit</a>
-	                                                            <!-- item-->
-	                                                            <a href="javascript:void(0);" class="dropdown-item">Action</a>
-	                                                        </div>
-	                                                    </div>
-	                                                </td>
-	                                            </tr>
-	                                            <tr>
-	                                                <td>
-	                                                    <div class="m-r-10"><img src="assets/images/github.png" alt="user" width="35"></div>
-	                                                </td>
-	                                                <td>Fitness Products </td>
-	                                                <td>
-	                                                    <div class="avatar-group">
-	                                                        <span><a href="#"><i class="fab fa-fw fa-facebook-square facebook-color "></i></a></span>
-	                                                        <span><a href="#"><i class="fab fa-fw fa-twitter-square twitter-color "></i></a></span>
-	                                                    </div>
-	                                                </td>
-	                                                <td>2,50,000 / 3,50,000</td>
-	                                                <td>70%</td>
-	                                                <td>10 Aug,2018</td>
-	                                                <td>
-	                                                    <div class="dropdown float-right">
-	                                                        <a href="#" class="dropdown-toggle  card-drop" data-toggle="dropdown" aria-expanded="true">
-	                                            <i class="mdi mdi-dots-vertical"></i>
-	                                        </a>
-	                                                        <div class="dropdown-menu dropdown-menu-right">
-	                                                            <!-- item-->
-	                                                            <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
-	                                                            <!-- item-->
-	                                                            <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-	                                                            <!-- item-->
-	                                                            <a href="javascript:void(0);" class="dropdown-item">Profit</a>
-	                                                            <!-- item-->
-	                                                            <a href="javascript:void(0);" class="dropdown-item">Action</a>
-	                                                        </div>
-	                                                    </div>
-	                                                </td>
-	                                            </tr>
-	                                            <tr>
-	                                                <td>
-	                                                    <div class="m-r-10"><img src="assets/images/dropbox.png" alt="user" width="35"></div>
-	                                                </td>
-	                                                <td>Gym Trainer Program </td>
-	                                                <td>
-	                                                    <div class="avatar-group">
-	                                                        <span><a href="#"><i class="fab fa-fw fa-facebook-square facebook-color "></i></a></span>
-	                                                        <span><a href="#"><i class="fab fa-fw fa-pinterest-square pinterest-color "></i></a></span>
-	                                                    </div>
-	                                                </td>
-	                                                <td>3,50,000 / 4,50,000</td>
-	                                                <td>70%</td>
-	                                                <td>22 Aug,2018</td>
-	                                                <td>
-	                                                    <div class="dropdown float-right">
-	                                                        <a href="#" class="dropdown-toggle  card-drop" data-toggle="dropdown" aria-expanded="true">
-	                                            <i class="mdi mdi-dots-vertical"></i>
-	                                        </a>
-	                                                        <div class="dropdown-menu dropdown-menu-right">
-	                                                            <!-- item-->
-	                                                            <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
-	                                                            <!-- item-->
-	                                                            <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-	                                                            <!-- item-->
-	                                                            <a href="javascript:void(0);" class="dropdown-item">Profit</a>
-	                                                            <!-- item-->
-	                                                            <a href="javascript:void(0);" class="dropdown-item">Action</a>
-	                                                        </div>
-	                                                    </div>
-	                                                </td>
-	                                            </tr>
-	                                            <tr>
-	                                                <td>
-	                                                    <div class="m-r-10"><img src="assets/images/bitbucket.png" alt="user" width="30"></div>
-	                                                </td>
-	                                                <td>2018 Top Product </td>
-	                                                <td>
-	                                                    <div class="avatar-group">
-	                                                        <span><a href="#"><i class="fab fa-fw fa-pinterest-square pinterest-color"></i></a></span>
-	                                                    </div>
-	                                                </td>
-	                                                <td>4,50,000 / 5,50,000</td>
-	                                                <td>70%</td>
-	                                                <td>25 Aug,2018</td>
-	                                                <td>
-	                                                    <div class="dropdown float-right">
-	                                                        <a href="#" class="dropdown-toggle  card-drop" data-toggle="dropdown" aria-expanded="true">
-	                                            <i class="mdi mdi-dots-vertical"></i>
-	                                        </a>
-	                                                        <div class="dropdown-menu dropdown-menu-right">
-	                                                            <!-- item-->
-	                                                            <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
-	                                                            <!-- item-->
-	                                                            <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-	                                                            <!-- item-->
-	                                                            <a href="javascript:void(0);" class="dropdown-item">Profit</a>
-	                                                            <!-- item-->
-	                                                            <a href="javascript:void(0);" class="dropdown-item">Action</a>
-	                                                        </div>
-	                                                    </div>
-	                                                </td>
-	                                            </tr>
-	                                            <tr>
-	                                                <td>
-	                                                    <div class="m-r-10"><img src="assets/images/mail_chimp.png" alt="user" width="30"></div>
-	                                                </td>
-	                                                <td>Top Dashboard Sale 2018</td>
-	                                                <td>
-	                                                    <div class="avatar-group">
-	                                                        <span><a href="#"><i class="fab fa-fw fa-facebook-square facebook-color"></i></a></span>
-	                                                        <span><a href="#"><i class="fab fa-fw fa-pinterest-square pinterest-color"></i></a></span>
-	                                                    </div>
-	                                                </td>
-	                                                <td>5,50,000 / 6,50,000</td>
-	                                                <td>70%</td>
-	                                                <td>27 Aug,2018</td>
-	                                                <td>
-	                                                    <div class="dropdown float-right">
-	                                                        <a href="#" class="dropdown-toggle  card-drop" data-toggle="dropdown" aria-expanded="true">
-	                                            <i class="mdi mdi-dots-vertical"></i>
-	                                        </a>
+	                                            
+													<?php foreach ($penilaians as $penilaian) {
+														?>
+													<tr>
+														<td><?php foreach ($dosens as $dosen) {
+															if ($dosen['id'] == $penilaian['dosen_id']) {
+																echo $dosen['name'];
+															}
+														} ?></td>
+														<td><?php foreach ($matkuls as $matkul) {
+															if ($matkul['id'] == $penilaian['matkul_id']) {
+																echo $matkul['name'];
+															}
+														} ?></td>
+														<td><?php foreach ($prodi as $prod) {
+															if ($prod['id'] == $penilaian['prodi_id']) {
+																echo $prod['name'];
+															}
+														} ?></td>
+														<td><?php echo $penilaian['tgl_nilai']; ?></td>
+														<td><?php foreach ($tahun_akas as $tahun_aka) {
+															if ($tahun_aka['id'] == $penilaian['ta_id']) {
+																echo $tahun_aka['name'];
+															}
+														} ?></td>
+														<td><a href="http://localhost/simonsi/index.php?simonsi=detail&id=<?php echo $penilaian['id']?>"  class="btn btn-xs btn-success">detail</a>
+														<a href="http://localhost/simonsi/index.php?simonsi=edit&id=<?php echo $penilaian['id']?>"  class="btn btn-xs btn-warning">edit</a>
+														<a href="http://localhost/simonsi/index.php?simonsi=delete&id=<?php echo $penilaian['id']?>"  class="btn btn-xs btn-danger">Hapus</a></td>
+													</tr>
+														<?php
+													}
+													 ?>
+	                                          
+	                               
+	                                      
 	                                                        <div class="dropdown-menu dropdown-menu-right">
 	                                                            <!-- item-->
 	                                                            <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
@@ -793,6 +686,37 @@
 	                    <script src="http://localhost/simonsi/public/home/assets/vendor/charts/charts-bundle/chartjs.js"></script>
 	                    <!-- dashboard js -->
 	                    <script src="http://localhost/simonsi/public/home/assets/libs/js/dashboard-influencer.js"></script>
+						<script>
+							// $(document).ready(function(){
+							// 	$("#detail").click(function(){
+							// 		alert('sds');
+							// 		});
+							// 	});
+							$(document).ready(function(){
+								$(".detail").click(function(){
+									var matkulid = $(this).val();
+									// alert(dataid);
+									$.ajax({
+										url: 'http://localhost/simonsi/index.php?simonsi=detail1',
+										type: 'post',
+										data: {aka:matkulid},
+										dataType: 'json',
+										success:function(response){
+											// alert(response);
+											$("html").load("http://localhost/simonsi/index.php?simonsi=detail&id="+response);
+											
+
+										}
+									});
+								});
+								$(".tambah").click(function(){
+               						 alert("The paragraph was clicked.");
+   									});
+
+								});
+								
+
+						</script>
 </body>
  
 </html>

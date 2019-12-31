@@ -54,16 +54,22 @@ class Route
 
           if ($simonsi == 'home') {
             $this->homeController->index();
-          }elseif ($simonsi == 'create_simonsi') {
-            $this->simonsiController->create_simonsi();
-          }elseif ($simonsi == 'store_simonsi') {
-            $this->simonsiController->store_simonsi();
-          }elseif ($simonsi == 'show') {
-            $this->simonsiController->detail_simonsi();
+          }elseif ($simonsi == 'add_data_akademik') {
+            $this->homeController->add_data_akademik();
+          }elseif($simonsi == 'get_matkul'){
+            $this->homeController->get_matkul();
+          }else if($simonsi == 'submit_data'){
+            $this->homeController->submit_data();
+          }else if($simonsi == 'detail'){
+            $this->homeController->detail();
           }elseif ($simonsi == 'edit') {
-            $this->simonsiController->edit_simonsi();
-          }elseif ($simonsi == 'update') {
-            $this->simonsiController->update();
+            $this->homeController->edit();
+          }elseif ($simonsi == 'update_data') {
+            $this->homeController->update();
+          }else if($simonsi == 'delete'){
+            $this->homeController->delete();
+          }else if($simonsi == 'detail1'){
+            $this->homeController->detail1();
           }
 
           //admin controller
@@ -74,7 +80,7 @@ class Route
             $this->adminController->addfakultas();
           }elseif ($simonsi == 'add_fakultas_submit') {
             $this->adminController->add_fakultas_submit();
-          }
+          }else if($simonsi == 'add_fakultas_submit')
 
           //join controller
 

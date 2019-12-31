@@ -37,6 +37,13 @@ class Tahun
         $row = mysqli_fetch_array($query);
         return $row;
   }
+  public function tahun($id)
+  {
+        $con = $this->openDb();
+        $query  = mysqli_query($con, "SELECT * FROM thn_aka WHERE id = '$id'");
+        $row = mysqli_fetch_array($query);
+        return $row;
+  }
   
 
 }
